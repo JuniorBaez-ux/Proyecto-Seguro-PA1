@@ -29,6 +29,11 @@
                     <TextBox x:Name="CriterioTextBox" Width="130" HorizontalAlignment="Left" KeyDown="CriterioTextBox_KeyDown"/>
                 </StackPanel>
 
+                <StackPanel Orientation="Vertical" Margin="10,0">
+                    <Label Content="Fecha"/>
+                    <DatePicker x:Name="FechaDatePicker" Width="130"/>
+                </StackPanel>
+
                 <StackPanel VerticalAlignment="Bottom">
                     <Button x:Name="BuscarIDButton" Height="30" Width="102" Click="BuscarIDButton_Click" Margin="10,0">
                     <StackPanel Orientation="Horizontal">
@@ -44,8 +49,8 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Cliente Id" Binding="{Binding ClienteId}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Nombre" Binding="{Binding Nombres}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="Cedula" Binding="{Binding Cedula}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Numero de celular" Binding="{Binding Celular}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Identificacion" Binding="{Binding Identificacion}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Telefono" Binding="{Binding Telefono}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Correo" Binding="{Binding Email}" IsReadOnly="True"/>
                     </DataGrid.Columns>
                 </DataGrid>
