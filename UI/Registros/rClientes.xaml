@@ -21,8 +21,8 @@
 
                 <Button x:Name="BuscarIDButton" Height="30" Width="102" Click="BuscarIDButton_Click" Margin="10,0">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountSearch" VerticalAlignment="Center"/>
-                        <Label Content="Buscar" Foreground="#DDF0ECEC"/>
+                        <materialDesign:PackIcon Kind="AccountSearch" VerticalAlignment="Center" Height="20" Width="20"/>
+                        <Label Content="Buscar" Foreground="Black"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -69,19 +69,19 @@
                 <Button x:Name="NuevoButton" Height="36" Width="109" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"  Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="NewBox"  VerticalAlignment="Center" Height="40" Width="20"/>
-                        <Label Content="Nuevo" Foreground="#DDF0ECEC" />
+                        <Label Content="Nuevo" Foreground="Black" />
                     </StackPanel>
                 </Button>
                 <Button x:Name="GuardarButton"  Height="36" Width="115" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom" >
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ContentSave" VerticalAlignment="Center" Height="40" Width="20"/>
-                        <Label Content="Guardar"  Foreground="#DDF0ECEC" />
+                        <Label Content="Guardar"  Foreground="Black" />
                     </StackPanel>
                 </Button>
                 <Button x:Name="EliminarButton" Height="36" Width="115" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom" Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Delete" VerticalAlignment="Center" Height="40" Width="20"/>
-                        <Label Content="Eliminar" Foreground="#DDF0ECEC"  />
+                        <Label Content="Eliminar" Foreground="Black"  />
                     </StackPanel>
                 </Button>
             </StackPanel>
