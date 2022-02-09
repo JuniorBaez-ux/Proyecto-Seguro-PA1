@@ -30,7 +30,7 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AccountEditOutline" Height="30" Width="40" />
-                    <TextBox x:Name="NombreTextBox" Height="25" Width="200" Text="{Binding Nombres}" materialDesign:HintAssist.Hint="Inserte un nombre..." materialDesign:HintAssist.HintOpacity=".25" />
+                    <TextBox x:Name="NombreTextBox" Height="25" Width="200" Text="{Binding Nombre}" materialDesign:HintAssist.Hint="Inserte un nombre..." materialDesign:HintAssist.HintOpacity=".25" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -66,19 +66,19 @@
                 </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
-                <Button x:Name="NuevoButton" Height="36" Width="109" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"  Cursor="Hand">
+                <Button x:Name="NuevoButton" Height="36" Width="109" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"  Cursor="Hand" Click="NuevoButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="NewBox"  VerticalAlignment="Center" Height="40" Width="20"/>
                         <Label Content="Nuevo" Foreground="#DDF0ECEC" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="GuardarButton"  Height="36" Width="115" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom" >
+                <Button x:Name="GuardarButton" Click="GuardarButton_Click" Height="36" Width="115" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom" >
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ContentSave" VerticalAlignment="Center" Height="40" Width="20"/>
                         <Label Content="Guardar"  Foreground="#DDF0ECEC" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="EliminarButton" Height="36" Width="115" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom" Cursor="Hand">
+                <Button x:Name="EliminarButton" Click="EliminarButton_Click" Height="36" Width="115" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom" Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Delete" VerticalAlignment="Center" Height="40" Width="20"/>
                         <Label Content="Eliminar" Foreground="#DDF0ECEC"  />
