@@ -4,7 +4,9 @@ using Proyecto_Seguro_PA1.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,8 +29,8 @@ namespace Proyecto_Seguro_PA1.UI.Registros
         {
             InitializeComponent();
             this.DataContext = cliente;
+            
         }
-
         private void Limpiar()
         {
             this.cliente = new Clientes();
@@ -62,6 +64,38 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                 esValido = false;
                 MessageBox.Show("Falta el Email", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
+            bool IsValidEmail(string email)
+            {
+                try
+                {
+                    var addr = new MailAddress(email);
+                    return addr.Address == email;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+            if (EmailTextBox.Text.Length != 0)
+            {
+                if (IsValidEmail(EmailTextBox.Text) == true)
+                {
+                    esValido = true;
+                }
+                else
+                {
+                    esValido = false;
+                    MessageBox.Show("Debe ingresar un campo Email valido", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    EmailTextBox.Focus();
+                }
+            }
+
+
+
+
+            ///
 
             if (IdentificacionTextBox.Text.Length == 0)
             {
