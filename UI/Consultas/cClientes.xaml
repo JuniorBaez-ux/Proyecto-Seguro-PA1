@@ -30,8 +30,13 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="10,0">
-                    <Label Content="Fecha"/>
-                    <DatePicker x:Name="FechaDatePicker" Width="130"/>
+                    <Label Content="Desde"/>
+                    <DatePicker x:Name="Desde_DataPicker" Width="130"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Hasta:" />
+                    <DatePicker x:Name="Hasta_DataPicker" Width="130"/>
                 </StackPanel>
 
                 <StackPanel VerticalAlignment="Bottom">
