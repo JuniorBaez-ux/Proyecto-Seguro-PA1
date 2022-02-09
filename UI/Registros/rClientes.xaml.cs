@@ -69,8 +69,12 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                 MessageBox.Show("Falta la Identificacion", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
-            /*if (ClientesBLL.ExisteIdentificacion(IdentificacionTextBox.Text) == true)
+            if (ClientesBLL.ExisteIdentificacion(IdentificacionTextBox.Text) == true)
             {
+                if (ClientesBLL.Existe(Utilidades.ToInt(IdTextBox.Text)) == true)
+                {
+                    return true;
+                }
                 esValido = false;
 
                 MessageBox.Show("Ya existe un Cliente con esta Identificacion!", "Fallo",
@@ -79,12 +83,16 @@ namespace Proyecto_Seguro_PA1.UI.Registros
             }
             if (ClientesBLL.ExisteTelefono(TelefonoTextBox.Text) == true)
             {
+                if (ClientesBLL.Existe(Utilidades.ToInt(IdTextBox.Text)) == true)
+                {
+                    return true;
+                }
                 esValido = false;
 
                 MessageBox.Show("Ya existe un Cliente con este Telefono!", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 TelefonoTextBox.Focus();
-            }*/
+            }
 
             return esValido;
         }
@@ -99,11 +107,6 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                 this.cliente = Tipo;
                 this.DataContext = cliente;
 
-                /*alquiler.IdInmueble = Utilidades.inmuebleAux.IdInmueble;
-                CodigoInmuebleTextBox.Text = Utilidades.inmuebleAux.Codigo;
-                TipoInmuebleDescripcionTextBox.Text = Tipo.Descripcion;
-                DescripcionInmuebleTextBox.Text = Utilidades.inmuebleAux.Descripcion;
-                PrecioAlquilerTextBox.Text = Utilidades.inmuebleAux.PrecioAlquiler.ToString();*/
             }
         }
 
