@@ -1,5 +1,6 @@
 ﻿using Proyecto_Seguro_PA1.BLL;
 using Proyecto_Seguro_PA1.Entidades;
+using Proyecto_Seguro_PA1.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,12 +62,14 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                 esValido = false;
                 MessageBox.Show("Falta el Email", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
             if (IdentificacionTextBox.Text.Length == 0)
             {
                 esValido = false;
                 MessageBox.Show("Falta la Identificacion", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            if (ClientesBLL.ExisteIdentificacion(IdentificacionTextBox.Text) == true)
+
+            /*if (ClientesBLL.ExisteIdentificacion(IdentificacionTextBox.Text) == true)
             {
                 esValido = false;
 
@@ -81,23 +84,26 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                 MessageBox.Show("Ya existe un Cliente con este Telefono!", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 TelefonoTextBox.Focus();
-            }
+            }*/
 
             return esValido;
         }
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)
         {
-            var Cliente  = ClientesBLL.Buscar(cliente.ClienteId);
+            cBusquedaDeCliente cCliente = new cBusquedaDeCliente();
+            cCliente.ShowDialog();
 
-            if (Cliente != null)
+            if (Utilidades.ClienteSelect == true)
             {
-                this.cliente = Cliente;
+                var Tipo = ClientesBLL.Buscar(Utilidades.clienteAux.ClienteId);
+                this.cliente = Tipo;
                 this.DataContext = cliente;
-            }
-            else
-            {
-                Limpiar();
-                MessageBox.Show("Cliente no existe en la base de datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                /*alquiler.IdInmueble = Utilidades.inmuebleAux.IdInmueble;
+                CodigoInmuebleTextBox.Text = Utilidades.inmuebleAux.Codigo;
+                TipoInmuebleDescripcionTextBox.Text = Tipo.Descripcion;
+                DescripcionInmuebleTextBox.Text = Utilidades.inmuebleAux.Descripcion;
+                PrecioAlquilerTextBox.Text = Utilidades.inmuebleAux.PrecioAlquiler.ToString();*/
             }
         }
 
