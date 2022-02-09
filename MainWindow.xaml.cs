@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Proyecto_Seguro_PA1.UI.Registros;
+using Proyecto_Seguro_PA1.UI.Consultas;
 
 namespace Proyecto_Seguro_PA1
 {
@@ -23,6 +25,18 @@ namespace Proyecto_Seguro_PA1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Registro_Click(object sender, RoutedEventArgs e)
+        {
+            rClientes rClientes = new rClientes();
+            rClientes.Show();
+        }
+
+        private void Consultas_Click(object sender, RoutedEventArgs e)
+        {
+            cClientes cClientes = new cClientes();
+            cClientes.Show(); 
         }
     }
 }
