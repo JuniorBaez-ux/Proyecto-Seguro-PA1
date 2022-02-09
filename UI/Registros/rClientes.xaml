@@ -64,7 +64,7 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <materialDesign:PackIcon Kind="Email" Height="30" Width="40"/>
-                    <TextBox x:Name="EmailTextBox" Height="25" Width="200" Text="{Binding Email}" materialDesign:HintAssist.Hint="Inserte un email..." materialDesign:HintAssist.HintOpacity=".25" />
+                    <TextBox x:Name="EmailTextBox" Height="25"  Width="200" Text="{Binding Email}" materialDesign:HintAssist.Hint="Inserte un email..." materialDesign:HintAssist.HintOpacity=".25" />
                 </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
