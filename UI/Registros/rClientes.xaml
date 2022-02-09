@@ -25,6 +25,8 @@
                         <Label Content="Buscar" Foreground="#DDF0ECEC"/>
                     </StackPanel>
                 </Button>
+
+                <DatePicker x:Name="FechaRegistroDatePicker" SelectedDate="{Binding FechaRegistro}" SelectedDateFormat="Short" IsEnabled="False" Width="120" Height="23" Margin="170,0,0,0"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
