@@ -20,7 +20,10 @@
                     <Label Content="Filtro"/>
                     <ComboBox x:Name="FiltroComboBox" Width="130" HorizontalAlignment="Left">
                         <ComboBoxItem Content="ClienteId"/>
-                        <ComboBoxItem Content="NombreCliente"/>
+                        <ComboBoxItem Content="Nombre"/>
+                        <ComboBoxItem Content="Identificacion"/>
+                        <ComboBoxItem Content="Telefono"/>
+                        <ComboBoxItem Content="Correo"/>
                     </ComboBox>
                 </StackPanel>
 
@@ -53,10 +56,11 @@
                 <DataGrid x:Name="DatosDataGrid" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center" Height="250" Width="800" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Cliente Id" Binding="{Binding ClienteId}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombres}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Identificacion" Binding="{Binding Identificacion}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Telefono" Binding="{Binding Telefono}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Correo" Binding="{Binding Email}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Fecha" Binding="{Binding FechaRegistro}" IsReadOnly="True"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
