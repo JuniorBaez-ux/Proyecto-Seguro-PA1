@@ -90,12 +90,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                     MessageBox.Show("Debe ingresar un campo Email valido", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     EmailTextBox.Focus();
                 }
-            }
-
-
-
-
-            ///
+            } 
 
             if (IdentificacionTextBox.Text.Length == 0)
             {
