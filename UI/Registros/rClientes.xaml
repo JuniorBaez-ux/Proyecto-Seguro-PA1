@@ -11,7 +11,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Registro de Clientes" Height="300" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registro de Clientes" Height="330" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 
@@ -29,42 +29,34 @@
                 <DatePicker x:Name="FechaRegistroDatePicker" SelectedDate="{Binding FechaRegistro}" SelectedDateFormat="Short" IsEnabled="False" Width="100" Height="23" Margin="170,0,0,0"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AccountEditOutline" Height="30" Width="40" />
-                    <TextBox x:Name="NombreTextBox" Height="25" Width="200" Text="{Binding Nombre}" materialDesign:HintAssist.Hint="Inserte un nombre..." materialDesign:HintAssist.HintOpacity=".25" />
+                    <TextBox x:Name="NombreTextBox" Height="25" Width="200" Text="{Binding Nombre}" materialDesign:HintAssist.Hint="Inserte un nombre..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Nombre"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="CardAccountDetails" Height="30" Width="40"/>
-                    <TextBox x:Name="IdentificacionTextBox" Height="25" Width="200" Text="{Binding Identificacion}" materialDesign:HintAssist.Hint="Inserte su identificacion..." materialDesign:HintAssist.HintOpacity=".25" MaxLength="20" />
+                    <TextBox x:Name="IdentificacionTextBox" Height="25" Width="200" Text="{Binding Identificacion}" materialDesign:HintAssist.Hint="Inserte su identificacion..." materialDesign:HintAssist.HintOpacity=".25" MaxLength="20" materialDesign:HintAssist.HelperText="Identificacion"/>
                 </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Home" Height="30" Width="40"/>
-                    <TextBox x:Name="DireccionTextBox" Height="25" Width="200" Text="{Binding Direccion}" materialDesign:HintAssist.Hint="Inserte una direccion..." materialDesign:HintAssist.HintOpacity=".25" />
+                    <TextBox x:Name="DireccionTextBox" Height="25" Width="200" Text="{Binding Direccion}" materialDesign:HintAssist.Hint="Inserte una direccion..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Direccion"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,0">
                     <materialDesign:PackIcon Kind="Phone" Height="30" Width="40"/>
-                    <TextBox x:Name="TelefonoTextBox" Height="25" Width="200" Text="{Binding Telefono}" materialDesign:HintAssist.Hint="Inserte un telefono..." materialDesign:HintAssist.HintOpacity=".25" MaxLength="20" />
+                    <TextBox x:Name="TelefonoTextBox" Height="25" Width="200" Text="{Binding Telefono}" materialDesign:HintAssist.Hint="Inserte un telefono..." materialDesign:HintAssist.HintOpacity=".25" MaxLength="20" materialDesign:HintAssist.HelperText="Telefono"/>
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0,10">
-                
 
-               
-            </StackPanel>
-
- 
-              
-
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
                     <materialDesign:PackIcon Kind="Email" Height="30" Width="40"/>
-                    <TextBox x:Name="EmailTextBox" Height="25"  Width="200" Text="{Binding Email}" materialDesign:HintAssist.Hint="Inserte un email..." materialDesign:HintAssist.HintOpacity=".25" />
+                <TextBox x:Name="EmailTextBox" Height="25"  Width="200" Text="{Binding Email}" materialDesign:HintAssist.Hint="Inserte un email..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Correo"/>
                 </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
