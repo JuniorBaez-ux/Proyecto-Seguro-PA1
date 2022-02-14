@@ -19,11 +19,14 @@
                 <StackPanel Orientation="Vertical">
                     <Label Content="Filtro"/>
                     <ComboBox x:Name="FiltroComboBox" Width="130" HorizontalAlignment="Left">
-                        <ComboBoxItem Content="ClienteId"/>
-                        <ComboBoxItem Content="Nombre"/>
-                        <ComboBoxItem Content="Identificacion"/>
-                        <ComboBoxItem Content="Telefono"/>
-                        <ComboBoxItem Content="Correo"/>
+                        <ComboBoxItem Content="VehiculoId"/>
+                        <ComboBoxItem Content="Matricula"/>
+                        <ComboBoxItem Content="Marca"/>
+                        <ComboBoxItem Content="Modelo"/>
+                        <ComboBoxItem Content="Año"/>
+                        <ComboBoxItem Content="Propietario"/>
+                        <ComboBoxItem Content="Color"/>
+                        <ComboBoxItem Content="Uso"/>
                     </ComboBox>
                 </StackPanel>
 
