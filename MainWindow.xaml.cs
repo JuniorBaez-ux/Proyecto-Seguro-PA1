@@ -50,5 +50,17 @@ namespace Proyecto_Seguro_PA1
             cVehiculos cVehiculos = new cVehiculos();
             cVehiculos.Show();
         }
+
+        private void Registro_Seguros_Click(object sender, RoutedEventArgs e)
+        {
+            rSeguros rSeguros = new rSeguros();
+            rSeguros.Show();
+        }
+
+        private void Consulta_Seguros_Click(object sender, RoutedEventArgs e)
+        {
+            cSeguros cSeguros = new cSeguros();
+            cSeguros.Show();
+        }
     }
 }
