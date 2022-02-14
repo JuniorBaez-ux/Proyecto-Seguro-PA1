@@ -12,10 +12,12 @@
 
                 <MenuItem Header ="Registros" >
                     <MenuItem x:Name = "Registro" Click="Registro_Click" Header = "Registro de Clientes" ></MenuItem>
+                    <MenuItem x:Name="Registro_vehiculos"  Click="Registro_vehiculos_Click" Header="Registro de Vehiculos"></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header = "Consultas" >
-                    <MenuItem x:Name = "Consultas" Click="Consultas_Click" Header = "Clientes" ></MenuItem>
+                    <MenuItem x:Name = "Consultas" Click="Consultas_Click" Header = "Consulta de Clientes" ></MenuItem>
+                    <MenuItem x:Name="Consulta_vehiculos"  Click="Consulta_vehiculos_Click" Header="Consulta de Vehiculos"></MenuItem>
                 </MenuItem>
             </Menu>
         </StackPanel>

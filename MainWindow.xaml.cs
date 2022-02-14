@@ -38,5 +38,17 @@ namespace Proyecto_Seguro_PA1
             cClientes cClientes = new cClientes();
             cClientes.Show(); 
         }
+
+        private void Registro_vehiculos_Click(object sender, RoutedEventArgs e)
+        {
+            rVehiculos rVehiculos = new rVehiculos();
+            rVehiculos.Show();
+        }
+
+        private void Consulta_vehiculos_Click(object sender, RoutedEventArgs e)
+        {
+            cVehiculos cVehiculos = new cVehiculos();
+            cVehiculos.Show();
+        }
     }
 }
