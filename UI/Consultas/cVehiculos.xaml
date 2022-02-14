@@ -60,6 +60,7 @@
                         <DataGridTextColumn Header="Marca" Binding="{Binding Marca}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Modelo" Binding="{Binding Modelo}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Año" Binding="{Binding Year}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Propietario" Binding="{Binding Propietario}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Color" Binding="{Binding Color}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Uso" Binding="{Binding Uso}" IsReadOnly="True" />
                     </DataGrid.Columns>
