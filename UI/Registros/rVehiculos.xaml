@@ -45,12 +45,12 @@
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="CarEstate" Height="30" Width="40"/>
-                    <TextBox x:Name="TipoTextBox" Height="25" Width="200" Text="{Binding Direccion}" materialDesign:HintAssist.Hint="Inserte el tipo de vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Tipo"/>
+                    <TextBox x:Name="TipoTextBox" Height="25" Width="200" Text="{Binding TipoVehiculo}" materialDesign:HintAssist.Hint="Inserte el tipo de vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Tipo"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,0">
                     <materialDesign:PackIcon Kind="Calendar" Height="30" Width="40"/>
-                    <TextBox x:Name="YearTextBox" Height="25" Width="200" Text="{Binding Year}" materialDesign:HintAssist.Hint="Inserte el año del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" MaxLength="4" materialDesign:HintAssist.HelperText="Año"/>
+                    <TextBox x:Name="YearTextBox" Height="25" Width="200" Text="{Binding AnioVehiculo}" materialDesign:HintAssist.Hint="Inserte el año del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" MaxLength="4" materialDesign:HintAssist.HelperText="Año"/>
                 </StackPanel>
             </StackPanel>
             
@@ -69,7 +69,7 @@
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <materialDesign:PackIcon Kind="AccountPlus" Height="30" Width="40"/>
-                    <TextBox x:Name="PasajerosTextBox" Height="25"  Width="200" Text="{Binding Pasajeros}" materialDesign:HintAssist.Hint="Inserte la cantidad de pasajeros..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Pasajetos"/>
+                    <TextBox x:Name="PasajerosTextBox" Height="25"  Width="200" Text="{Binding CantidadPasajeros}" materialDesign:HintAssist.Hint="Inserte la cantidad de pasajeros..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Pasajetos"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -81,7 +81,7 @@
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <materialDesign:PackIcon Kind="CarCog" Height="30" Width="40"/>
-                    <TextBox x:Name="ChasisTextBox" Height="25"  Width="200" Text="{Binding Chasis}" materialDesign:HintAssist.Hint="Inserte la cantidad de chasis..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Chasis"/>
+                    <TextBox x:Name="ChasisTextBox" Height="25"  Width="200" Text="{Binding Chasis}" materialDesign:HintAssist.Hint="Inserte el chasis..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Chasis"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -93,7 +93,7 @@
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <materialDesign:PackIcon Kind="TrainCar" Height="30" Width="40"/>
-                    <TextBox x:Name="TipoUsoTextBox" Height="25"  Width="200" Text="{Binding TipoUso}" materialDesign:HintAssist.Hint="Inserte uso del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Uso"/>
+                    <TextBox x:Name="TipoUsoTextBox" Height="25"  Width="200" Text="{Binding UsoVehiculo}" materialDesign:HintAssist.Hint="Inserte uso del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Uso"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

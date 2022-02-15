@@ -19,7 +19,7 @@
             <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <materialDesign:PackIcon Kind="Identifier" Height="30" Width="40"/>
-                <TextBox x:Name="IdTextBox" IsReadOnly="True" Height="25" Width="30" Text="{Binding VehiculoId}" materialDesign:HintAssist.Hint="Id..." materialDesign:HintAssist.HintOpacity=".25" />
+                <TextBox x:Name="IdTextBox" IsReadOnly="True" Height="25" Width="30" Text="{Binding SeguroId}" materialDesign:HintAssist.Hint="Id..." materialDesign:HintAssist.HintOpacity=".25" />
 
                 <Button x:Name="BuscarIDButton" Height="30" Width="102" Click="BuscarIDButton_Click" Margin="10,0">
                     <StackPanel Orientation="Horizontal">
@@ -65,50 +65,50 @@
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <materialDesign:PackIcon Kind="Car" Height="30" Width="40"/>
-                    <ComboBox Height="25" Width="200" materialDesign:HintAssist.Hint="Seleccione el vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Vehiculo" IsReadOnly="True"/>
+                    <ComboBox Height="25" Width="200" materialDesign:HintAssist.Hint="Seleccione el vehiculo..." Text="{Binding Vehiculo}" materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Vehiculo" IsReadOnly="True"/>
                 </StackPanel>
             </StackPanel>         
 
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <materialDesign:PackIcon Kind="Color" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="ColorTextBox" Height="25"  Width="200" Text="{Binding Color}" materialDesign:HintAssist.Hint="Inserte el color del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Color"/>
+                    <TextBox IsReadOnly="True" x:Name="ColorTextBox" Height="25"  Width="200" Text="{Binding SColor}" materialDesign:HintAssist.Hint="Inserte el color del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Color"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <materialDesign:PackIcon Kind="CardText" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="MatriculaTextBox" Height="25"  Width="200" Text="{Binding Matricula}" materialDesign:HintAssist.Hint="Inserte la matricula del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Matricula"/>
+                    <TextBox IsReadOnly="True" x:Name="MatriculaTextBox" Height="25"  Width="200" Text="{Binding SMatricula}" materialDesign:HintAssist.Hint="Inserte la matricula del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Matricula"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <materialDesign:PackIcon Kind="AccountPlus" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="PasajerosTextBox" Height="25"  Width="200" Text="{Binding Pasajeros}" materialDesign:HintAssist.Hint="Inserte la cantidad de pasajeros..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Pasajetos"/>
+                    <TextBox IsReadOnly="True" x:Name="PasajerosTextBox" Height="25"  Width="200" Text="{Binding SCantidadPasajeros}" materialDesign:HintAssist.Hint="Inserte la cantidad de pasajeros..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Pasajetos"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <materialDesign:PackIcon Kind="Cash" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="PrecioTextBox" Height="25"  Width="200" Text="{Binding Precio}" materialDesign:HintAssist.Hint="Inserte el precio del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Precio"/>
+                    <TextBox IsReadOnly="True" x:Name="PrecioTextBox" Height="25"  Width="200" Text="{Binding SPrecio}" materialDesign:HintAssist.Hint="Inserte el precio del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Precio"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <materialDesign:PackIcon Kind="CarCog" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="ChasisTextBox" Height="25"  Width="200" Text="{Binding Chasis}" materialDesign:HintAssist.Hint="Inserte la cantidad de chasis..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Chasis"/>
+                    <TextBox IsReadOnly="True" x:Name="ChasisTextBox" Height="25"  Width="200" Text="{Binding SChasis}" materialDesign:HintAssist.Hint="Inserte el chasis..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Chasis"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <materialDesign:PackIcon Kind="CarCog" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="CilindrosTextBox" Height="25"  Width="200" Text="{Binding Cilindros}" materialDesign:HintAssist.Hint="Inserte la cantidad de cilindros..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Cilindros"/>
+                    <TextBox IsReadOnly="True" x:Name="CilindrosTextBox" Height="25"  Width="200" Text="{Binding SCilindros}" materialDesign:HintAssist.Hint="Inserte la cantidad de cilindros..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Cilindros"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <materialDesign:PackIcon Kind="TrainCar" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="TipoUsoTextBox" Height="25"  Width="200" Text="{Binding TipoUso}" materialDesign:HintAssist.Hint="Inserte uso del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Uso"/>
+                    <TextBox IsReadOnly="True" x:Name="TipoUsoTextBox" Height="25"  Width="200" Text="{Binding SUsoVehiculo}" materialDesign:HintAssist.Hint="Inserte uso del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Uso"/>
                     </StackPanel>
                 </StackPanel>
 
