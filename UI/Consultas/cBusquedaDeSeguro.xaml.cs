@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace Proyecto_Seguro_PA1.UI.Consultas
 {
     /// <summary>
-    /// Interaction logic for cSeguros.xaml
+    /// Interaction logic for cBusquedaDeSeguro.xaml
     /// </summary>
-    public partial class cSeguros : Window
+    public partial class cBusquedaDeSeguro : Window
     {
-        public cSeguros()
+        public cBusquedaDeSeguro()
         {
             InitializeComponent();
         }
@@ -120,6 +120,20 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
 
             DatosDataGrid.ItemsSource = null;
             DatosDataGrid.ItemsSource = listado;
+        }
+
+        private void AceptarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DatosDataGrid.SelectedItem != null)
+            {
+                Utilidades.SeguroAux = (Seguros)DatosDataGrid.SelectedItem;
+                Utilidades.ClienteSelect = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un Seguro", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

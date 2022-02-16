@@ -38,7 +38,38 @@ namespace Proyecto_Seguro_PA1.UI.Registros
 
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)
         {
+            cBusquedaDeSeguro cSegruo = new cBusquedaDeSeguro();
+            cSegruo.ShowDialog();
 
+            if (Utilidades.ClienteSelect == true)
+            {
+                var Tipo = SegurosBLL.Buscar(Utilidades.SeguroAux.SeguroId);
+                this.seguro = Tipo;
+                this.DataContext = seguro; 
+                seguro.ClienteId = Tipo.ClienteId;
+                seguro.VehiculoId = Tipo.VehiculoId;
+
+                var cliente = ClientesBLL.Buscar(seguro.ClienteId);
+                var vehiculo = VehiculosBLL.Buscar(seguro.VehiculoId);
+                var uso = UsosBLL.Buscar(vehiculo.UsoId);
+
+                
+                NombreTextBox.Text = cliente.Nombre;
+                TelefonoTextBox.Text = cliente.Telefono;
+                DireccionTextBox.Text = cliente.Direccion;
+                IdentificacionTextBox.Text = cliente.Identificacion;
+
+                ColorTextBox.Text = vehiculo.Color;
+                MatriculaTextBox.Text = vehiculo.Matricula;
+                PasajerosTextBox.Text = vehiculo.CantidadPasajeros.ToString();
+                PrecioTextBox.Text = vehiculo.Precio.ToString();
+                ChasisTextBox.Text = vehiculo.Chasis;
+                CilindrosTextBox.Text = vehiculo.Cilindros.ToString();
+                TipoUsoTextBox.Text = uso.Descripcion;
+
+
+
+            }
         }
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
@@ -86,6 +117,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
             {
                 var Tipo = ClientesBLL.Buscar(Utilidades.clienteAux.ClienteId);
                 seguro.ClienteId = Tipo.ClienteId;
+                seguro.Nombre = Tipo.Nombre;    
                 NombreTextBox.Text = Tipo.Nombre;
                 IdentificacionTextBox.Text = Tipo.Identificacion;
                 DireccionTextBox.Text = Tipo.Direccion;
@@ -105,6 +137,9 @@ namespace Proyecto_Seguro_PA1.UI.Registros
             {
                 var Tipo = VehiculosBLL.Buscar(Utilidades.vehiculoAux.VehiculoId);
                 seguro.VehiculoId = Tipo.VehiculoId;
+                seguro.Marca = Tipo.Marca;
+                seguro.Matricula = Tipo.Matricula;
+                seguro.Anio = Tipo.AnioVehiculo.ToString();
                 ColorTextBox.Text = Tipo.Color;
                 MatriculaTextBox.Text = Tipo.Matricula;
                 PasajerosTextBox.Text = Tipo.CantidadPasajeros.ToString();

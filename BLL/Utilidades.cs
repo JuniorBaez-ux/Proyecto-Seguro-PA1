@@ -20,6 +20,7 @@ namespace Proyecto_Seguro_PA1.BLL
 
         public static Clientes clienteAux;
         public static Vehiculos vehiculoAux;
+        public static Seguros SeguroAux;
         public static bool ClienteSelect = false;
     }
 }
