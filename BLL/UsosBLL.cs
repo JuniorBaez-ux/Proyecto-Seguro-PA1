@@ -11,6 +11,27 @@ namespace Proyecto_Seguro_PA1.BLL
 {
     public class UsosBLL
     {
+        public static Usos Buscar(int id)
+        {
+            Contexto contexto = new Contexto();
+            Usos Usos;
+
+            try
+            {
+                Usos = contexto.Usos.Find(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return Usos;
+        }
+
         public static List<Usos> GetUsos()
         {
             List<Usos> lista = new List<Usos>();
