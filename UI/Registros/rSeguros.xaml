@@ -11,7 +11,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Registro de Seguros" Height="750" Width="550">
+        Title="Registro de Seguros" Height="600" Width="550">
     <Grid>
 
         <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -35,17 +35,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0,10">
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="DateRange" Height="30" Width="40" />
-                    <DatePicker IsEnabled="False" x:Name="FechaInicioDatePicker" Height="25" Width="200" SelectedDateFormat="Short" SelectedDate="{Binding FechaInicio}" materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Fecha de Inicio"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="DateRange" Height="30" Width="40"/>
-                    <DatePicker IsEnabled="False" x:Name="FechaFinDatePicker" Height="25" Width="200" SelectedDateFormat="Short" SelectedDate="{Binding FechaFin}" materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Fecha de Finalizacion"/>
-                </StackPanel>
-            </StackPanel>
+            
 
 
             <StackPanel Orientation="Horizontal" Margin="0,10">
@@ -126,29 +116,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0,10">
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Cash100" Height="30" Width="40" />
-                    <TextBox x:Name="MontoAseguradoTextBox" Height="25" Width="200" Text="{Binding MontoAsegurado}" materialDesign:HintAssist.Hint="Inserte el monto asgurado" materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Monto Asegurado"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="CashPlus" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="ISCTextBox" Height="25" Width="200" Text="{Binding ISC}" materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="ISC"/>
-                </StackPanel>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,10">
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Cash" Height="30" Width="40" />
-                    <TextBox x:Name="ValorDocumentoTextBox" Height="25" Width="200" Text="{Binding ValorDocumento}" materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Valor del documento"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="CashCheck" Height="30" Width="40"/>
-                    <TextBox IsReadOnly="True" x:Name="PrimaNetaTextBox" Height="25" Width="200" Text="{Binding PrimaNeta}" materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Prima Neta"/>
-                </StackPanel>
-            </StackPanel>
+          
 
             <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
                 <Button x:Name="NuevoButton" Height="36" Width="109" Margin="15,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"  Cursor="Hand" Click="NuevoButton_Click">
