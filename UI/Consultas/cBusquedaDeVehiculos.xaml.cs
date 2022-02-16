@@ -17,13 +17,27 @@ using System.Windows.Shapes;
 namespace Proyecto_Seguro_PA1.UI.Consultas
 {
     /// <summary>
-    /// Interaction logic for cVehiculos.xaml
+    /// Interaction logic for cBusquedaDeVehiculos.xaml
     /// </summary>
-    public partial class cVehiculos : Window
+    public partial class cBusquedaDeVehiculos : Window
     {
-        public cVehiculos()
+        public cBusquedaDeVehiculos()
         {
             InitializeComponent();
+        }
+
+        private void AceptarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DatosDataGrid.SelectedItem != null)
+            {
+                Utilidades.vehiculoAux = (Vehiculos)DatosDataGrid.SelectedItem;
+                Utilidades.ClienteSelect = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un Vehiculo", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)

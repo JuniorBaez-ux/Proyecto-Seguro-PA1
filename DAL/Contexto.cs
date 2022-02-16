@@ -13,20 +13,25 @@ namespace Proyecto_Seguro_PA1.DAL
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Vehiculos> Vehiculos { get; set; }
         public DbSet<Seguros> Seguros { get; set; }
+        public DbSet<Usos> Usos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"Data Source = DATA\DataBase.db");
         }
 
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Usuarios>().HasData(new Usuarios
+            modelBuilder.Entity<Usos>().HasData(new Usos
             {
-                UsuarioId = 1,
-                NombreUsuario = "Admin",
-                Email = "profe098@gmail.com",
-                Clave = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"//clave: 1234
+                UsoId = 1,
+                Descripcion = "Privado"
             });
-        }*/
+
+            modelBuilder.Entity<Usos>().HasData(new Usos
+            {
+                UsoId = 2,
+                Descripcion = "Publico"
+            });
+        }
     }
 }

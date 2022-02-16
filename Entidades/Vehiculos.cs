@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto_Seguro_PA1.Entidades
 {
@@ -21,8 +22,16 @@ namespace Proyecto_Seguro_PA1.Entidades
         public double Precio { get; set; }
         public string Chasis { get; set; }
         public int Cilindros { get; set; }
-        public string UsoVehiculo { get; set; }
         public string Propietario { get; set; }
+        public int ClienteId { get; set; }
+        public int UsoId { get; set; }
+        public DateTime FechaRegistro { get; set; } = DateTime.Now;
+
+        [ForeignKey("ClienteId")]
+        public virtual Clientes Clientes { get; set; }
+
+        [ForeignKey("UsoId")]
+        public virtual Usos Usos { get; set; }
 
     }
 }

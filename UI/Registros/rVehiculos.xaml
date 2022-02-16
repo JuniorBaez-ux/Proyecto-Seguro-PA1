@@ -26,6 +26,7 @@
                     </StackPanel>
                 </Button>
 
+                <DatePicker x:Name="FechaRegistroDatePicker" SelectedDate="{Binding FechaRegistro}" SelectedDateFormat="Short" IsEnabled="False" Width="100" Height="23" Margin="190,0,0,0"/>
 
 
             </StackPanel>
@@ -93,12 +94,19 @@
             <StackPanel Orientation="Horizontal" Margin="0,10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <materialDesign:PackIcon Kind="TrainCar" Height="30" Width="40"/>
-                    <TextBox x:Name="TipoUsoTextBox" Height="25"  Width="200" Text="{Binding UsoVehiculo}" materialDesign:HintAssist.Hint="Inserte uso del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Uso"/>
+                    <ComboBox x:Name="UsoComboBox" Height="25" Width="200" SelectedValue="{Binding UsoId}" materialDesign:HintAssist.Hint="Uso del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Uso"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <materialDesign:PackIcon Kind="Contact" Height="30" Width="40"/>
-                    <ComboBox x:Name="PropietarioComboBox" Height="25" Width="200" Text="{Binding Propietario}" materialDesign:HintAssist.Hint="Propietario del vehiculo..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Propietario"/>
+                    <TextBox x:Name="ClienteTextBox" IsReadOnly="True"  Height="25"  Width="140" Text="{Binding Propietario}" materialDesign:HintAssist.Hint="Busca el cliente..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Cliente"/>
+
+                    <Button x:Name="BuscarClienteButton" Height="30" Width="50" Click="BuscarClienteButton_Click"  Margin="10,0">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
                 </StackPanel>
             </StackPanel>
 
