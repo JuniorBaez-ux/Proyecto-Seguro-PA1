@@ -62,5 +62,17 @@ namespace Proyecto_Seguro_PA1
             cSeguros cSeguros = new cSeguros();
             cSeguros.Show();
         }
+
+        private void Registro_Reclamos_Click(object sender, RoutedEventArgs e)
+        {
+            rReclamos rReclamos = new rReclamos();
+            rReclamos.Show();
+        }
+
+        private void Consulta_Reclamos_Click(object sender, RoutedEventArgs e)
+        {
+            cReclamos cReclamos = new cReclamos();
+            cReclamos.Show();
+        }
     }
 }
