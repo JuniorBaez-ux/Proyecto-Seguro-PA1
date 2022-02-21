@@ -23,5 +23,10 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
         {
             InitializeComponent();
         }
+
+        private void BuscarIDButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
