@@ -17,9 +17,9 @@ namespace Proyecto_Seguro_PA1.Entidades
         public string Alegaciones { get; set; }
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
         public bool Activo { get; set; } = true;
-        /*public int ClienteId { get; set; }
+        public int ClienteId { get; set; }
 
         [ForeignKey("ClienteId")]
-        public virtual Clientes ClienteReclamo { get; set; }*/
+        public virtual Clientes ClientesReclamo { get; set; }
     }
 }

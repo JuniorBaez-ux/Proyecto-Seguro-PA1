@@ -119,6 +119,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
             if (Utilidades.ClienteSelect == true)
             {
                 var Tipo = ClientesBLL.Buscar(Utilidades.clienteAux.ClienteId);
+                reclamo.ClienteId = Tipo.ClienteId;
                 NombreTextBox.Text = Tipo.Nombre;
                 IdentificacionTextBox.Text = Tipo.Identificacion;
                 TelefonoTextBox.Text = Tipo.Telefono;
