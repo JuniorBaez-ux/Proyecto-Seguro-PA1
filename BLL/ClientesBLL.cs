@@ -92,7 +92,7 @@ namespace Proyecto_Seguro_PA1.BLL
             return paso;
         }
 
-        public static Clientes Buscar(int id)
+        /*public static Clientes Buscar(int id)
         {
             Contexto contexto = new Contexto();
             Clientes clientes;
@@ -111,6 +111,33 @@ namespace Proyecto_Seguro_PA1.BLL
             }
 
             return clientes;
+        }*/
+
+
+        public static Clientes Buscar(int id)
+        {
+            Contexto contexto = new Contexto();
+            Clientes cliente;
+
+            try
+            {
+                cliente = contexto.Clientes.Find(id);
+
+                if (cliente.Activo == false)
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return cliente;
         }
 
         public static List<Clientes> GetList(Expression<Func<Clientes, bool>> criterio)
@@ -119,7 +146,7 @@ namespace Proyecto_Seguro_PA1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Clientes.Where(criterio).ToList();
+                lista = contexto.Clientes.Where(criterio).Where(c => c.Activo == true).ToList();
             }
             catch (Exception)
             {
@@ -195,7 +222,7 @@ namespace Proyecto_Seguro_PA1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Clientes.ToList();
+                lista = contexto.Clientes.Where(c => c.Activo == true).ToList();
             }
             catch (Exception)
             {
@@ -206,6 +233,33 @@ namespace Proyecto_Seguro_PA1.BLL
                 contexto.Dispose();
             }
             return lista;
+        }
+
+        public static bool Desactivar(int id)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                var cliente = contexto.Clientes.Find(id);
+
+                if (cliente != null)
+                {
+                    cliente.Activo = false;
+                    Modificar(cliente);
+                    paso = cliente.Activo == false;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
         }
     }
 }

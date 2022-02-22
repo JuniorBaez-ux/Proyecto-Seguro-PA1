@@ -16,6 +16,7 @@ namespace Proyecto_Seguro_PA1.Entidades
         public string Identificacion { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
+        public bool Activo { get; set; } = true;
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
     }
 }

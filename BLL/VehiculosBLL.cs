@@ -67,6 +67,34 @@ namespace Proyecto_Seguro_PA1.BLL
             return paso;
         }
 
+
+        public static bool Desactivar(int id)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                var vehiculo = contexto.Vehiculos.Find(id);
+
+                if (vehiculo != null)
+                {
+                    vehiculo.Activo = false;
+                    Modificar(vehiculo);
+                    paso = vehiculo.Activo == false;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -92,7 +120,7 @@ namespace Proyecto_Seguro_PA1.BLL
             return paso;
         }
 
-        public static Vehiculos Buscar(int id)
+        /*public static Vehiculos Buscar(int id)
         {
             Contexto contexto = new Contexto();
             Vehiculos vehiculos;
@@ -111,6 +139,32 @@ namespace Proyecto_Seguro_PA1.BLL
             }
 
             return vehiculos;
+        }*/
+
+        public static Vehiculos Buscar(int id)
+        {
+            Contexto contexto = new Contexto();
+            Vehiculos vehiculo;
+
+            try
+            {
+                vehiculo = contexto.Vehiculos.Find(id);
+
+                if (vehiculo.Activo == false)
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return vehiculo;
         }
 
         public static List<Vehiculos> GetList(Expression<Func<Vehiculos, bool>> criterio)
@@ -119,7 +173,7 @@ namespace Proyecto_Seguro_PA1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Vehiculos.Where(criterio).ToList();
+                lista = contexto.Vehiculos.Where(criterio).Where(c => c.Activo == true).ToList();
             }
             catch (Exception)
             {
@@ -158,7 +212,7 @@ namespace Proyecto_Seguro_PA1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Vehiculos.ToList();
+                lista = contexto.Vehiculos.Where(c => c.Activo == true).ToList();
             }
             catch (Exception)
             {

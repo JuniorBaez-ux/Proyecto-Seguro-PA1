@@ -180,7 +180,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (VehiculosBLL.Eliminar(Utilidades.ToInt(IdTextBox.Text)))
+            if (VehiculosBLL.Desactivar(Utilidades.ToInt(IdTextBox.Text)))
             {
                 Limpiar();
                 MessageBox.Show("Registro eliminado!", "Exito",

@@ -92,7 +92,7 @@ namespace Proyecto_Seguro_PA1.BLL
             return paso;
         }
 
-        public static Seguros Buscar(int id)
+        /*public static Seguros Buscar(int id)
         {
             Contexto contexto = new Contexto();
             Seguros Seguros;
@@ -111,6 +111,32 @@ namespace Proyecto_Seguro_PA1.BLL
             }
 
             return Seguros;
+        }*/
+
+        public static Seguros Buscar(int id)
+        {
+            Contexto contexto = new Contexto();
+            Seguros seguro;
+
+            try
+            {
+                seguro = contexto.Seguros.Find(id);
+
+                if (seguro.Activo == false)
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return seguro;
         }
 
         public static List<Seguros> GetList(Expression<Func<Seguros, bool>> criterio)
@@ -119,7 +145,7 @@ namespace Proyecto_Seguro_PA1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Seguros.Where(criterio).ToList();
+                lista = contexto.Seguros.Where(criterio).Where(c => c.Activo == true).ToList();
             }
             catch (Exception)
             {
@@ -158,7 +184,7 @@ namespace Proyecto_Seguro_PA1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Seguros.ToList();
+                lista = contexto.Seguros.Where(c => c.Activo == true).ToList();
             }
             catch (Exception)
             {
@@ -169,6 +195,33 @@ namespace Proyecto_Seguro_PA1.BLL
                 contexto.Dispose();
             }
             return lista;
+        }
+
+        public static bool Desactivar(int id)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                var seguro = contexto.Seguros.Find(id);
+
+                if (seguro != null)
+                {
+                    seguro.Activo = false;
+                    Modificar(seguro);
+                    paso = seguro.Activo == false;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
         }
     }
 }

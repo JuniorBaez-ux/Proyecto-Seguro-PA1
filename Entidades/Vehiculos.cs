@@ -26,6 +26,7 @@ namespace Proyecto_Seguro_PA1.Entidades
         public int ClienteId { get; set; }
         public int UsoId { get; set; }
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
+        public bool Activo { get; set; } = true;
 
         [ForeignKey("ClienteId")]
         public virtual Clientes Clientes { get; set; }

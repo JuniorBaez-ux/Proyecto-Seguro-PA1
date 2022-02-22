@@ -97,7 +97,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (SegurosBLL.Eliminar(Utilidades.ToInt(IdTextBox.Text)))
+            if (SegurosBLL.Desactivar(Utilidades.ToInt(IdTextBox.Text)))
             {
                 Limpiar();
                 MessageBox.Show("Registro eliminado!", "Exito",
