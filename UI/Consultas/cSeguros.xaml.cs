@@ -39,8 +39,8 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                         {
                             if (Desde_DataPicker.SelectedDate != null)
                                 listado = SegurosBLL.GetList(
-                                    c => /*c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
-                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&*/
+                                    c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
+                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
                                     c.ClientesSeguro.Nombre.ToLower().Contains(CriterioTextBox.Text.ToLower())
                                 );
                             else
@@ -56,8 +56,8 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                         {
                             if (Desde_DataPicker.SelectedDate != null)
                                 listado = SegurosBLL.GetList(
-                                    c => /*c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
-                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&*/
+                                    c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
+                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
                                     c.VehiculosSeguro.Matricula.ToLower().Contains(CriterioTextBox.Text.ToLower())
                                 );
                             else
@@ -73,8 +73,8 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                         {
                             if (Desde_DataPicker.SelectedDate != null)
                                 listado = SegurosBLL.GetList(
-                                    c => /*c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
-                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&*/
+                                    c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
+                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
                                     c.VehiculosSeguro.Marca.ToLower().Contains(CriterioTextBox.Text.ToLower())
                                 );
                             else
@@ -90,8 +90,8 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                         {
                             if (Desde_DataPicker.SelectedDate != null)
                                 listado = SegurosBLL.GetList(
-                                    c => /*c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
-                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&*/
+                                    c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
+                                    c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
                                     c.VehiculosSeguro.AnioVehiculo == Utilidades.ToInt(CriterioTextBox.Text)
                                 );
                             else
@@ -107,11 +107,11 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
             }
             else
             {
-                /*if (Desde_DataPicker.SelectedDate != null)
+                if (Desde_DataPicker.SelectedDate != null)
                     listado = SegurosBLL.GetList(e => e.FechaRegistro.Date >= Desde_DataPicker.SelectedDate);
 
                 if (Hasta_DataPicker.SelectedDate != null)
-                    listado = SegurosBLL.GetList(e => e.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate);*/
+                    listado = SegurosBLL.GetList(e => e.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate);
 
                 if (Desde_DataPicker.SelectedDate == null && Hasta_DataPicker.SelectedDate == null)
                     listado = SegurosBLL.GetList(c => true);
