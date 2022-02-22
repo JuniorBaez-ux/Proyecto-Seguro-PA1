@@ -26,7 +26,8 @@
                     </StackPanel>
                 </Button>
 
-                <DatePicker x:Name="FechaRegistroDatePicker" SelectedDate="{Binding FechaRegistro}" SelectedDateFormat="Short" IsEnabled="False" Width="100" Height="23" Margin="170,0,0,0"/>
+                <Label Content="Fecha de Registro:" Height="23" FontWeight="Medium" Width="130" Margin="60,0,0,0"/>
+                <DatePicker x:Name="FechaRegistroDatePicker" SelectedDate="{Binding FechaRegistro}" SelectedDateFormat="Short" IsEnabled="False" Width="100" Height="23"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10">

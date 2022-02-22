@@ -17,7 +17,7 @@ namespace Proyecto_Seguro_PA1.Entidades
         public string Matricula { get; set; }
         public string Marca { get; set; }
         public string Anio { get; set; }
-
+        public DateTime FechaRegistro { get; set; } = DateTime.Now;
         public int ClienteId { get; set; }
         public int VehiculoId { get; set; }
         public bool Activo { get; set; } = true;
