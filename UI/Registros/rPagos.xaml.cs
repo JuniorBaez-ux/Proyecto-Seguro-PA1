@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Proyecto_Seguro_PA1.BLL;
+using Proyecto_Seguro_PA1.UI.Consultas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +33,32 @@ namespace Proyecto_Seguro_PA1.UI.Registros
 
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)
         {
+            cBusquedaDeSeguro cSegruo = new cBusquedaDeSeguro();
+            cSegruo.ShowDialog();
 
+            if (Utilidades.ClienteSelect == true)
+            {
+                var Tipo = SegurosBLL.Buscar(Utilidades.SeguroAux.SeguroId);
+                var seguro = Tipo;
+                this.DataContext = seguro;
+                seguro.ClienteId = Tipo.ClienteId;
+                seguro.VehiculoId = Tipo.VehiculoId;
+
+                var cliente = ClientesBLL.Buscar(seguro.ClienteId);
+                var vehiculo = VehiculosBLL.Buscar(seguro.VehiculoId);
+
+
+                NombreTextBox.Text = cliente.Nombre;
+                TelefonoTextBox.Text = cliente.Telefono;
+                DireccionTextBox.Text = cliente.Direccion;
+                IdentificacionTextBox.Text = cliente.Identificacion;
+
+                ColorTextBox.Text = vehiculo.Color;
+                MatriculaTextBox.Text = vehiculo.Matricula;
+                PrecioTextBox.Text = vehiculo.Precio.ToString();
+                ChasisTextBox.Text = vehiculo.Chasis;
+
+            }
         }
     }
 }
