@@ -17,13 +17,27 @@ using System.Windows.Shapes;
 namespace Proyecto_Seguro_PA1.UI.Consultas
 {
     /// <summary>
-    /// Interaction logic for cReclamos.xaml
+    /// Interaction logic for cBusquedaDeReclamos.xaml
     /// </summary>
-    public partial class cReclamos : Window
+    public partial class cBusquedaDeReclamos : Window
     {
-        public cReclamos()
+        public cBusquedaDeReclamos()
         {
             InitializeComponent();
+        }
+
+        private void AceptarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DatosDataGrid.SelectedItem != null)
+            {
+                Utilidades.ReclamoAux = (Reclamos)DatosDataGrid.SelectedItem;
+                Utilidades.ClienteSelect = true;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un Reclamo", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)

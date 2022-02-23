@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_Seguro_PA1.DAL;
 
 namespace Proyecto_Seguro_PA1.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20220222234035_Agregando_CamposDeClientesReclamos")]
+    partial class Agregando_CamposDeClientesReclamos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +74,7 @@ namespace Proyecto_Seguro_PA1.Migrations
                     b.Property<DateTime>("FechaRegistro")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Identificacion")
+                    b.Property<string>("Identificaion")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

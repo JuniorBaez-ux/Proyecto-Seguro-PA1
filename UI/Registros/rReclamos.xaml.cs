@@ -72,7 +72,24 @@ namespace Proyecto_Seguro_PA1.UI.Registros
 
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)
         {
+            cBusquedaDeReclamos cReclamo = new cBusquedaDeReclamos();
+            cReclamo.ShowDialog();
 
+            if (Utilidades.ClienteSelect == true)
+            {
+                var Tipo = ReclamosBLL.Buscar(Utilidades.ReclamoAux.ReclamoId);
+                this.reclamo = Tipo;
+                this.DataContext = reclamo; 
+                reclamo.ClienteId = Tipo.ClienteId;
+
+                var cliente = ClientesBLL.Buscar(reclamo.ClienteId);
+                
+                NombreTextBox.Text = cliente.Nombre;
+                TelefonoTextBox.Text = cliente.Telefono;
+                DireccionTextBox.Text = cliente.Direccion;
+                IdentificacionTextBox.Text = cliente.Identificacion;
+
+            }
         }
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
@@ -120,6 +137,9 @@ namespace Proyecto_Seguro_PA1.UI.Registros
             {
                 var Tipo = ClientesBLL.Buscar(Utilidades.clienteAux.ClienteId);
                 reclamo.ClienteId = Tipo.ClienteId;
+                reclamo.Nombre = Tipo.Nombre;
+                reclamo.Identificacion = Tipo.Identificacion;
+                reclamo.Telefono = Tipo.Telefono;
                 NombreTextBox.Text = Tipo.Nombre;
                 IdentificacionTextBox.Text = Tipo.Identificacion;
                 TelefonoTextBox.Text = Tipo.Telefono;
