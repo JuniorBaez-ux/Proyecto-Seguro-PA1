@@ -246,6 +246,49 @@ namespace Proyecto_Seguro_PA1.BLL
 
                 if (cliente != null)
                 {
+
+                    List<Vehiculos> listaVehiculos = VehiculosBLL.GetVehiculos();
+
+                    foreach (var vehiculoBuscado in listaVehiculos)
+                    {
+                        var clienteBuscado = ClientesBLL.Buscar(vehiculoBuscado.ClienteId);
+
+                        if(clienteBuscado.ClienteId == cliente.ClienteId)
+                        {
+                            vehiculoBuscado.Activo = false;
+                            VehiculosBLL.Modificar(vehiculoBuscado);
+                        }
+                        
+                    }
+
+                    List<Reclamos> listaReclamos = ReclamosBLL.GetReclamos();
+
+                    foreach (var reclamoBuscado in listaReclamos)
+                    {
+                        var clienteBuscado = ClientesBLL.Buscar(reclamoBuscado.ClienteId);
+
+                        if (clienteBuscado.ClienteId == cliente.ClienteId)
+                        {
+                            reclamoBuscado.Activo = false;
+                            ReclamosBLL.Modificar(reclamoBuscado);
+                        }
+
+                    }
+
+                    List<Seguros> listaSeguros = SegurosBLL.GetSeguros();
+
+                    foreach (var seguroBuscado in listaSeguros)
+                    {
+                        var clienteBuscado = ClientesBLL.Buscar(seguroBuscado.ClienteId);
+
+                        if (clienteBuscado.ClienteId == cliente.ClienteId)
+                        {
+                            seguroBuscado.Activo = false;
+                            SegurosBLL.Modificar(seguroBuscado);
+                        }
+
+                    }
+
                     cliente.Activo = false;
                     Modificar(cliente);
                     paso = cliente.Activo == false;

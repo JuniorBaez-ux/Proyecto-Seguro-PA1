@@ -58,7 +58,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                 var Tipo = VehiculosBLL.Buscar(Utilidades.vehiculoAux.VehiculoId);
                 this.vehiculo = Tipo;
                 this.DataContext = vehiculo;
-
+                Utilidades.ClienteSelect = false;
             }
         }
 

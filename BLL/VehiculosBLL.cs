@@ -79,6 +79,20 @@ namespace Proyecto_Seguro_PA1.BLL
 
                 if (vehiculo != null)
                 {
+                    List<Seguros> listaSeguros = SegurosBLL.GetSeguros();
+
+                    foreach (var seguroBuscado in listaSeguros)
+                    {
+                        var vehiculoBuscado = VehiculosBLL.Buscar(seguroBuscado.VehiculoId);
+                            
+                        if (vehiculoBuscado.VehiculoId == vehiculo.VehiculoId)
+                        {
+                            seguroBuscado.Activo = false;
+                            SegurosBLL.Modificar(seguroBuscado);
+                        }
+
+                    }
+
                     vehiculo.Activo = false;
                     Modificar(vehiculo);
                     paso = vehiculo.Activo == false;
