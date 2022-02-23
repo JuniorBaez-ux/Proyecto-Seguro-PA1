@@ -15,6 +15,7 @@ namespace Proyecto_Seguro_PA1.DAL
         public DbSet<Seguros> Seguros { get; set; }
         public DbSet<Usos> Usos { get; set; }
         public DbSet<Reclamos> Reclamos { get; set; }
+        public DbSet<Pagos> Pagos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"Data Source = DATA\DataBase.db");
