@@ -15,6 +15,7 @@
                     <MenuItem x:Name="Registro_vehiculos"  Click="Registro_vehiculos_Click" Header="Registro de Vehiculos"></MenuItem>
                     <MenuItem x:Name="Registro_Seguros" Click="Registro_Seguros_Click" Header="Registro de Seguros"></MenuItem>
                     <MenuItem x:Name="Registro_Reclamos" Click="Registro_Reclamos_Click" Header="Registro de Reclamos"></MenuItem>
+                    <MenuItem x:Name="Registro_Pagos" Click="Registro_Pagos_Click"  Header="Registro de Pagos"></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header = "Consultas" >
