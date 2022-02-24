@@ -122,6 +122,7 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
 
             }
 
+
             DatosDataGrid.ItemsSource = null;
             DatosDataGrid.ItemsSource = listado;
         }
