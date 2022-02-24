@@ -12,10 +12,10 @@ namespace Proyecto_Seguro_PA1.Entidades
     {
         [Key]
         public int PagoId { get; set; }
-        public string FechaLimite { get; set; }
-        public string Estado { get; set; }
+        /* public string FechaLimite { get; set; }*/
+        public string Estado { get; set; } = "PENDIENTE";
         public decimal Monto { get; set; }
-        public string FechaPago { get; set; }
+        public DateTime FechaPago { get; set; } = DateTime.Now;
         public int SeguroId { get; set; }
 
         [ForeignKey("SeguroId")]

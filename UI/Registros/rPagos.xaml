@@ -11,13 +11,13 @@
         TextElement.FontWeight="Regular"
         TextElement.FontSize="14"
         TextElement.FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Registro de Pago de Alquiler" Height="650" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registro de Pago de Seguro" Height="650" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,0,0,0">
             <StackPanel Orientation="Vertical" Margin="0,10">
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <materialDesign:PackIcon Kind="Identifier" Height="30" Width="40"/>
-                    <TextBox x:Name="IdTextBox" IsReadOnly="True" Height="25" Width="30" Text="{Binding PagoId}" materialDesign:HintAssist.Hint="Id..." materialDesign:HintAssist.HintOpacity=".25" />
+                    <TextBox x:Name="IdTextBox" IsReadOnly="True" Height="25" Width="30" Text="{Binding SeguroId}" materialDesign:HintAssist.Hint="Id..." materialDesign:HintAssist.HintOpacity=".25" />
 
                     <Button x:Name="BuscarIDButton" Height="30" Width="102" Click="BuscarIDButton_Click"  Margin="10,0">
                         <StackPanel Orientation="Horizontal">
@@ -111,12 +111,12 @@
 
                                         <StackPanel Orientation="Horizontal" Margin="0,70,0,0">
                                             <materialDesign:PackIcon Kind="Cash" Height="30" Width="40"/>
-                                            <TextBox IsReadOnly="True" x:Name="PrecioSeguro" Height="25"  Width="200" materialDesign:HintAssist.Hint="Precio del seguro..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Precio"/>
+                                            <TextBox IsReadOnly="True" x:Name="PrecioSeguro" Height="25"  Width="200" Text="{Binding Precio}" materialDesign:HintAssist.Hint="Precio del seguro..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Precio"/>
                                         </StackPanel>
 
                                         <StackPanel Orientation="Horizontal" Margin="0,70,0,0">
                                             <materialDesign:PackIcon Kind="Payment" Height="30" Width="40"/>
-                                            <TextBox IsReadOnly="True" x:Name="MontoTotal" Height="25"  Width="200" materialDesign:HintAssist.Hint="Importe a pagar..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Importe"/>
+                                            <TextBox IsReadOnly="True" x:Name="MontoTotal" Height="25"  Width="200" Text="{Binding Monto}" materialDesign:HintAssist.Hint="Importe a pagar..." materialDesign:HintAssist.HintOpacity=".25" materialDesign:HintAssist.HelperText="Importe"/>
                                         </StackPanel>
 
                                     </StackPanel>

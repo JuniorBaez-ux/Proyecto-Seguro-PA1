@@ -1,4 +1,5 @@
 ﻿using Proyecto_Seguro_PA1.BLL;
+using Proyecto_Seguro_PA1.Entidades;
 using Proyecto_Seguro_PA1.UI.Consultas;
 using System;
 using System.Collections.Generic;
@@ -21,14 +22,36 @@ namespace Proyecto_Seguro_PA1.UI.Registros
     /// </summary>
     public partial class rPagos : Window
     {
+        private Pagos pago = new Pagos();
         public rPagos()
         {
             InitializeComponent();
+            this.DataContext = pago;
+            FechaRegistroDatePicker.DataContext = pago;
+        }
+
+        private void Limpiar()
+        {
+            this.pago = new Pagos();
+            this.DataContext = pago;
         }
 
         private void RegistrarPagoButton_Click(object sender, RoutedEventArgs e)
         {
+            /*if (!Validar())
+                return;*/
+            pago.Estado = "PAGAO";
+            var paso = PagosBLL.Guardar(pago);
 
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("Transaccione exitosa!", "Exito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+                MessageBox.Show("Transaccion Fallida", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)
@@ -40,6 +63,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
             {
                 var Tipo = SegurosBLL.Buscar(Utilidades.SeguroAux.SeguroId);
                 var seguro = Tipo;
+                pago.SeguroId = seguro.SeguroId;
                 this.DataContext = seguro;
                 seguro.ClienteId = Tipo.ClienteId;
                 seguro.VehiculoId = Tipo.VehiculoId;
@@ -57,6 +81,13 @@ namespace Proyecto_Seguro_PA1.UI.Registros
                 MatriculaTextBox.Text = vehiculo.Matricula;
                 PrecioTextBox.Text = vehiculo.Precio.ToString();
                 ChasisTextBox.Text = vehiculo.Chasis;
+
+                if (IdTextBox.Text != null)
+                {
+                    RegistrarPagoButton.IsEnabled = true;
+                    MontoTotal.Text = seguro.Precio.ToString();
+                    pago.Monto = seguro.Precio;
+                }
 
             }
         }
