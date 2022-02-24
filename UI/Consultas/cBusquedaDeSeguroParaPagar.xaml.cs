@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace Proyecto_Seguro_PA1.UI.Consultas
 {
     /// <summary>
-    /// Interaction logic for cBusquedaDeSeguro.xaml
+    /// Interaction logic for cBusquedaDeSeguroParaPagar.xaml
     /// </summary>
-    public partial class cBusquedaDeSeguro : Window
+    public partial class cBusquedaDeSeguroParaPagar : Window
     {
-        public cBusquedaDeSeguro()
+        public cBusquedaDeSeguroParaPagar()
         {
             InitializeComponent();
         }
@@ -41,10 +41,11 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                                 listado = SegurosBLL.GetList(
                                     c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
                                     c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
+                                    c.EstadoDePago == "PENDIENTE" &&
                                     c.ClientesSeguro.Nombre.ToLower().Contains(CriterioTextBox.Text.ToLower())
                                 );
                             else
-                                listado = SegurosBLL.GetList(e => e.ClientesSeguro.Nombre.ToLower().Contains(CriterioTextBox.Text.ToLower()));
+                                listado = SegurosBLL.GetList(e => e.ClientesSeguro.Nombre.ToLower().Contains(CriterioTextBox.Text.ToLower()) && e.EstadoDePago == "PENDIENTE");
                         }
                         catch (FormatException)
                         {
@@ -58,10 +59,11 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                                 listado = SegurosBLL.GetList(
                                     c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
                                     c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
+                                    c.EstadoDePago == "PENDIENTE" &&
                                     c.VehiculosSeguro.Matricula.ToLower().Contains(CriterioTextBox.Text.ToLower())
                                 );
                             else
-                                listado = SegurosBLL.GetList(d => d.VehiculosSeguro.Matricula.ToLower().Contains(CriterioTextBox.Text.ToLower()));
+                                listado = SegurosBLL.GetList(d => d.VehiculosSeguro.Matricula.ToLower().Contains(CriterioTextBox.Text.ToLower()) && d.EstadoDePago == "PENDIENTE");
                         }
                         catch (FormatException)
                         {
@@ -75,10 +77,11 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                                 listado = SegurosBLL.GetList(
                                     c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
                                     c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
+                                    c.EstadoDePago == "PENDIENTE" &&
                                     c.VehiculosSeguro.Marca.ToLower().Contains(CriterioTextBox.Text.ToLower())
                                 );
                             else
-                                listado = SegurosBLL.GetList(d => d.VehiculosSeguro.Marca.ToLower().Contains(CriterioTextBox.Text.ToLower()));
+                                listado = SegurosBLL.GetList(d => d.VehiculosSeguro.Marca.ToLower().Contains(CriterioTextBox.Text.ToLower()) && d.EstadoDePago == "PENDIENTE");
                         }
                         catch (FormatException)
                         {
@@ -92,10 +95,11 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                                 listado = SegurosBLL.GetList(
                                     c => c.FechaRegistro.Date >= Desde_DataPicker.SelectedDate &&
                                     c.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate &&
+                                    c.EstadoDePago == "PENDIENTE" &&
                                     c.VehiculosSeguro.AnioVehiculo == Utilidades.ToInt(CriterioTextBox.Text)
                                 );
                             else
-                                listado = SegurosBLL.GetList(d => d.VehiculosSeguro.AnioVehiculo == Utilidades.ToInt(CriterioTextBox.Text));
+                                listado = SegurosBLL.GetList(d => d.VehiculosSeguro.AnioVehiculo == Utilidades.ToInt(CriterioTextBox.Text) && d.EstadoDePago == "PENDIENTE");
                         }
                         catch (FormatException)
                         {
@@ -114,7 +118,7 @@ namespace Proyecto_Seguro_PA1.UI.Consultas
                     listado = SegurosBLL.GetList(e => e.FechaRegistro.Date <= Hasta_DataPicker.SelectedDate);
 
                 if (Desde_DataPicker.SelectedDate == null && Hasta_DataPicker.SelectedDate == null)
-                    listado = SegurosBLL.GetList(c => true);
+                    listado = SegurosBLL.GetList(c => true && c.EstadoDePago == "PENDIENTE");
 
             }
 

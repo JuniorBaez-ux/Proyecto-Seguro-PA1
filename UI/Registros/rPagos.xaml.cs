@@ -40,7 +40,12 @@ namespace Proyecto_Seguro_PA1.UI.Registros
         {
             /*if (!Validar())
                 return;*/
-            pago.Estado = "PAGAO";
+
+            pago.Estado = "PAGADO";
+            var seguro = SegurosBLL.Buscar(pago.SeguroId);
+            seguro.EstadoDePago = "PAGADO";
+            SegurosBLL.Guardar(seguro);
+
             var paso = PagosBLL.Guardar(pago);
 
             if (paso)
@@ -56,7 +61,7 @@ namespace Proyecto_Seguro_PA1.UI.Registros
 
         private void BuscarIDButton_Click(object sender, RoutedEventArgs e)
         {
-            cBusquedaDeSeguro cSegruo = new cBusquedaDeSeguro();
+            cBusquedaDeSeguroParaPagar cSegruo = new cBusquedaDeSeguroParaPagar();
             cSegruo.ShowDialog();
 
             if (Utilidades.ClienteSelect == true)

@@ -22,6 +22,7 @@ namespace Proyecto_Seguro_PA1.Entidades
         public int VehiculoId { get; set; }
         public bool Activo { get; set; } = true;
         public decimal Precio { get; set; }
+        public string EstadoDePago { get; set; } = "PENDIENTE";
 
         [ForeignKey("ClienteId")]
         public virtual Clientes ClientesSeguro { get; set; }
