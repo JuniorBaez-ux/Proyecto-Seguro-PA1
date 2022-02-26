@@ -25,6 +25,7 @@
                     <MenuItem x:Name="Consulta_Reclamos" Click="Consulta_Reclamos_Click" Header="Consulta de Reclamos"></MenuItem>
                 </MenuItem>
             </Menu>
+            <Image Source="C:\Users\USER\source\repos\Proyecto-Seguro-PA1\Resources\Carrito_Bonito.jpeg"/>
         </StackPanel>
     </Grid>
 </Window>
