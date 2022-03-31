@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Proyecto_Seguro_PA1.UI.Registros;
 using Proyecto_Seguro_PA1.UI.Consultas;
+using Proyecto_Seguro_PA1.BLL;
 
 namespace Proyecto_Seguro_PA1
 {
@@ -25,6 +26,18 @@ namespace Proyecto_Seguro_PA1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Visible;
+            ButtonOpenMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            ButtonOpenMenu.Visibility = Visibility.Visible;
         }
 
         private void Registro_Click(object sender, RoutedEventArgs e)
@@ -79,6 +92,41 @@ namespace Proyecto_Seguro_PA1
         {
             rPagos rPagos = new rPagos();
             rPagos.Show();
+        }
+
+        //inicio del listView
+        private void ListViewMenu_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListViewMenu.SelectedIndex == -1) { return; }
+
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            {
+                case "HacerPago":
+                    rPagos rPagos = new rPagos();
+                    rPagos.Show();
+                    ListViewMenu.SelectedIndex = -1;
+                    break;
+                case "RegistrarSeguro":
+                    rSeguros rSeguros = new rSeguros();
+                    rSeguros.Show();
+                    ListViewMenu.SelectedIndex = -1;
+                    break;
+                case "HacerReclamos":
+                    rReclamos rReclamos = new rReclamos();
+                    rReclamos.Show();
+                    ListViewMenu.SelectedIndex = -1;
+                    break;
+                case "RegistrarCliente":
+                    rClientes rClientes = new rClientes();
+                    rClientes.Show();
+                    ListViewMenu.SelectedIndex = -1;
+                    break;
+                case "RegistrarVehiculo":
+                    rVehiculos rVehiculos = new rVehiculos();
+                    rVehiculos.Show();
+                    ListViewMenu.SelectedIndex = -1;
+                    break;
+            }
         }
     }
 }

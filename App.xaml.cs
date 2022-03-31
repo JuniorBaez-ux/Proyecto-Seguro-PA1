@@ -13,5 +13,10 @@ namespace Proyecto_Seguro_PA1
     /// </summary>
     public partial class App : Application
     {
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("Lo sentimos ha ocurrido un error, " + e.Exception.Message);
+            e.Handled = true;
+        }
     }
 }

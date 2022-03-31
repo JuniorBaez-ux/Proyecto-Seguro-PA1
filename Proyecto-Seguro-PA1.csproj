@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\1.jpg" />
+    <None Remove="Resources\Carrito_Bonito.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11">
@@ -19,6 +24,11 @@
 
   <ItemGroup>
     <Folder Include="DATA\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\1.jpg" />
+    <Resource Include="Resources\Carrito_Bonito.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
