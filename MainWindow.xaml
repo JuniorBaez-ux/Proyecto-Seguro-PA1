@@ -40,16 +40,17 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="22">Seguros S.A</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontSize="26">Internacional de Seguros S.A</TextBlock>
 
         </Grid>
         <!--menu-->
-        <Menu Height="40" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Top" Background="DeepSkyBlue" FontWeight="Bold">
-            <MenuItem Header = "Consultas" >
-                <MenuItem x:Name = "Consultas" Click="Consultas_Click" Header = "Consulta de Clientes" ></MenuItem>
-                <MenuItem x:Name="Consulta_vehiculos"  Click="Consulta_vehiculos_Click" Header="Consulta de Vehiculos"></MenuItem>
-                <MenuItem x:Name="Consulta_Seguros" Click="Consulta_Seguros_Click" Header="Consulta de Seguros"></MenuItem>
-                <MenuItem x:Name="Consulta_Reclamos" Click="Consulta_Reclamos_Click" Header="Consulta de Reclamos"></MenuItem>
+        <Menu Height="40" HorizontalAlignment="Right" Margin="100,6" VerticalAlignment="Top" Background="#38fbdb"  FontWeight="Bold">
+
+            <MenuItem Header = "Consultas" Icon="{materialDesign:PackIcon Kind=TableSearch}"  Background="DeepSkyBlue" Foreground="White">
+                <MenuItem x:Name = "Consultas" Foreground="Black" Click="Consultas_Click" Header = "Consulta de Clientes" ></MenuItem>
+                <MenuItem x:Name="Consulta_vehiculos" Foreground="Black"  Click="Consulta_vehiculos_Click" Header="Consulta de Vehiculos"></MenuItem>
+                <MenuItem x:Name="Consulta_Seguros" Foreground="Black" Click="Consulta_Seguros_Click" Header="Consulta de Seguros"></MenuItem>
+                <MenuItem x:Name="Consulta_Reclamos" Foreground="Black" Click="Consulta_Reclamos_Click" Header="Consulta de Reclamos"></MenuItem>
             </MenuItem>
         </Menu>
        
@@ -59,8 +60,8 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
-            <StackPanel>
-                <Grid Height="130" Background="LightGray" RenderTransformOrigin="0.5,0.5">
+            <StackPanel  Background="#38fbdb">
+                <Grid Height="130" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -69,43 +70,43 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonOpenMenu_Click">
+                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="ButtonOpenMenu_Click">
                         <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
                     </Button>
-                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCloseMenu_Click">
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
                 </Grid>
 
-                <ListView x:Name="ListViewMenu" Foreground="Black"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged_1">
+                <ListView x:Name="ListViewMenu" Foreground="Black" FontWeight="Bold"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged_1">
                     <ListViewItem x:Name="HacerPago" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CallToAction" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Hacer Pago" x:Name="HacerUnPago" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
+                            <TextBlock Text="Realizar Pago" x:Name="HacerUnPago" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel> 
                     </ListViewItem>
-                    <ListViewItem x:Name="RegistrarSeguro" Height="60">
+                    <ListViewItem x:Name="RegistrarSeguro" Height="60" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Work" Height="25" Width="25" Margin="10"/>
                             <TextBlock x:Name="RegitrarUnSeguro" Text="Registrar Seguro" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" x:Name="HacerReclamos">
+                    <ListViewItem Height="60" x:Name="HacerReclamos" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="AccountAlert" Height="25" Width="25" Margin="10"/>
-                            <TextBlock x:Name="hacerReclamo" Text="Regitrar Reclamo"  VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock x:Name="hacerReclamo" Text="Registrar Reclamo"  VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" x:Name="RegistrarCliente">
+                    <ListViewItem Height="60" x:Name="RegistrarCliente" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="AccountAdd" Height="25" Width="25" Margin="10"/>
-                            <TextBlock x:Name="cliente" Text="Regitrar Cliente"  VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock x:Name="cliente" Text="Registrar Cliente"  VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" x:Name="RegistrarVehiculo">
+                    <ListViewItem Height="60" x:Name="RegistrarVehiculo" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Car2Plus" Height="25" Width="25" Margin="10"/>
-                            <TextBlock x:Name="vehiculo" Text="Regitrar Vehiculo"  VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock x:Name="vehiculo" Text="Registrar Vehiculo"  VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
