@@ -35,22 +35,22 @@
         </Grid.Background>
 
        
-        <Grid Height="60" VerticalAlignment="Top" Background="DeepSkyBlue">
+        <Grid Height="60" VerticalAlignment="Top" Background="#de82ff">
 
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontSize="26">Internacional de Seguros S.A</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontStyle="Italic" FontSize="26">Internacional de Seguros S.A</TextBlock>
 
         </Grid>
         <!--menu-->
-        <Menu Height="40" HorizontalAlignment="Right" Margin="100,6" VerticalAlignment="Top" Background="#38fbdb"  FontWeight="Bold">
+        <Menu Height="40" HorizontalAlignment="Right" Margin="100,6" VerticalAlignment="Top" Background="#de82ff"  FontWeight="Bold">
 
-            <MenuItem Header = "Consultas" Icon="{materialDesign:PackIcon Kind=TableSearch}"  Background="DeepSkyBlue" Foreground="White">
-                <MenuItem x:Name = "Consultas" Foreground="Black" Click="Consultas_Click" Header = "Consulta de Clientes" ></MenuItem>
-                <MenuItem x:Name="Consulta_vehiculos" Foreground="Black"  Click="Consulta_vehiculos_Click" Header="Consulta de Vehiculos"></MenuItem>
-                <MenuItem x:Name="Consulta_Seguros" Foreground="Black" Click="Consulta_Seguros_Click" Header="Consulta de Seguros"></MenuItem>
-                <MenuItem x:Name="Consulta_Reclamos" Foreground="Black" Click="Consulta_Reclamos_Click" Header="Consulta de Reclamos"></MenuItem>
+            <MenuItem Header = "Consultas" Icon="{materialDesign:PackIcon Kind=TableSearch}"  Foreground="Black">
+                <MenuItem x:Name = "Consultas" Click="Consultas_Click"  Header = "Consulta de Clientes" ></MenuItem>
+                <MenuItem x:Name="Consulta_vehiculos" Click="Consulta_vehiculos_Click"  Header="Consulta de Vehiculos"></MenuItem>
+                <MenuItem x:Name="Consulta_Seguros" Click="Consulta_Seguros_Click"  Header="Consulta de Seguros"></MenuItem>
+                <MenuItem x:Name="Consulta_Reclamos" Click="Consulta_Reclamos_Click" Header="Consulta de Reclamos"></MenuItem>
             </MenuItem>
         </Menu>
        
@@ -60,7 +60,7 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
-            <StackPanel  Background="#38fbdb">
+            <StackPanel  Background="#de82ff">
                 <Grid Height="130" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
                         <TransformGroup>
