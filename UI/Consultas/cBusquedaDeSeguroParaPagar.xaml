@@ -11,9 +11,9 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="cSeguros" Height="400" Width="750" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Consulta de Seguros" Height="450" Width="750" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <StackPanel Orientation="Vertical" Margin="10"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" Margin="10,5,10,0"  HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
 
                 <StackPanel Orientation="Vertical">
