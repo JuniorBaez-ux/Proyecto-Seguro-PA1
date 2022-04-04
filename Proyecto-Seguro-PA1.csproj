@@ -6,11 +6,17 @@
     <RootNamespace>Proyecto_Seguro_PA1</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <AssemblyName>Sistema De Seguros</AssemblyName>
+    <ApplicationIcon>seguro-de-coche.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Resources\1.jpg" />
     <None Remove="Resources\Carrito_Bonito.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="seguro-de-coche.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +43,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +60,10 @@
   <ItemGroup>
     <None Update="DATA\DataBase.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

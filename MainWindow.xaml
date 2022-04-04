@@ -47,10 +47,10 @@
         <Menu Height="40" HorizontalAlignment="Right" Margin="100,6" VerticalAlignment="Top" Background="#de82ff"  FontWeight="Bold">
 
             <MenuItem Header = "Consultas" Icon="{materialDesign:PackIcon Kind=TableSearch}"  Foreground="Black">
-                <MenuItem x:Name = "Consultas" Click="Consultas_Click"  Header = "Consulta de Clientes" ></MenuItem>
-                <MenuItem x:Name="Consulta_vehiculos" Click="Consulta_vehiculos_Click"  Header="Consulta de Vehiculos"></MenuItem>
-                <MenuItem x:Name="Consulta_Seguros" Click="Consulta_Seguros_Click"  Header="Consulta de Seguros"></MenuItem>
-                <MenuItem x:Name="Consulta_Reclamos" Click="Consulta_Reclamos_Click" Header="Consulta de Reclamos"></MenuItem>
+                <MenuItem x:Name = "Consultas" Icon="{materialDesign:PackIcon Kind=UserSearch}" Click="Consultas_Click"  Header = "Consulta de Clientes" ></MenuItem>
+                <MenuItem x:Name="Consulta_vehiculos" Icon="{materialDesign:PackIcon Kind=Car}" Click="Consulta_vehiculos_Click"  Header="Consulta de Vehiculos"></MenuItem>
+                <MenuItem x:Name="Consulta_Seguros" Icon="{materialDesign:PackIcon Kind=PaperSearchOutline}" Click="Consulta_Seguros_Click"  Header="Consulta de Seguros"></MenuItem>
+                <MenuItem x:Name="Consulta_Reclamos" Icon="{materialDesign:PackIcon Kind=PersonQuestion}" Click="Consulta_Reclamos_Click" Header="Consulta de Reclamos"></MenuItem>
             </MenuItem>
         </Menu>
        
