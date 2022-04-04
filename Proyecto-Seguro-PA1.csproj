@@ -10,12 +10,20 @@
     <ApplicationIcon>seguro-de-coche.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
+    <None Remove="DATA\DataBase.db" />
     <None Remove="Resources\1.jpg" />
     <None Remove="Resources\Carrito_Bonito.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="DATA\DataBase.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="seguro-de-coche.ico" />
   </ItemGroup>
 
@@ -26,10 +34,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DATA\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,9 +62,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="DATA\DataBase.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
